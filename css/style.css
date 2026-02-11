@@ -1,0 +1,378 @@
+/* 새로운 모던 디자인 스타일 */
+
+/* 네비게이션 링크 */
+.nav-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #64748b;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(232, 121, 90, 0.2);
+    color: #E8795A;
+}
+
+.nav-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 60px;
+    background: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 모바일 네비게이션 */
+.mobile-nav-link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: rgba(232, 121, 90, 0.2);
+    color: #E8795A;
+}
+
+/* 스킬 카드 */
+.skill-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    border-color: #E8795A;
+    box-shadow: 0 20px 40px rgba(232, 121, 90, 0.15);
+}
+
+/* 도구 태그 */
+.tool-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 9999px;
+    color: #94a3b8;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.tool-tag:hover {
+    border-color: #E8795A;
+    color: #E8795A;
+}
+
+/* 프로젝트 카드 */
+.project-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: #E8795A;
+    box-shadow: 0 20px 40px rgba(232, 121, 90, 0.15);
+}
+
+/* SNS 링크 */
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 1.5rem 2rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 1rem;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-4px);
+    border-color: #E8795A;
+    box-shadow: 0 20px 40px rgba(232, 121, 90, 0.15);
+}
+
+.social-link span {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* SNS 링크 (작은 버전) */
+.social-link-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 50%;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.social-link-sm:hover {
+    transform: translateY(-4px);
+    border-color: #E8795A;
+    box-shadow: 0 10px 20px rgba(232, 121, 90, 0.2);
+}
+
+/* 페이드인 애니메이션 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E8795A;
+    border-radius: 3px;
+}
+
+/* 선택 색상 */
+::selection {
+    background: rgba(232, 121, 90, 0.3);
+}
+
+/* 반응형 조정 */
+@media (max-width: 1024px) {
+    main {
+        padding-bottom: 80px;
+    }
+}
+
+/* 부드러운 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 프로필 장식 링 */
+.profile-container {
+    position: relative;
+}
+
+.profile-ring {
+    position: absolute;
+    border: 2px solid #E8795A;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.profile-ring-outer {
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    opacity: 0.4;
+}
+
+.profile-ring-arc {
+    width: 130%;
+    height: 130%;
+    top: -15%;
+    right: -15%;
+    border-width: 4px;
+    border-color: transparent #E8795A transparent transparent;
+    transform: rotate(-45deg);
+}
+
+/* 장식 쉐브론 */
+.decorative-chevron {
+    color: rgba(232, 121, 90, 0.15);
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background: #E8795A;
+    color: white;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #D96A4A;
+    box-shadow: 0 10px 30px rgba(232, 121, 90, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid #3B4754;
+    color: white;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: #E8795A;
+    color: #E8795A;
+}
+
+/* 기술 스택 바 */
+.tech-stack-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.tech-stack-item:hover {
+    color: #94a3b8;
+}
+
+/* 서비스 아이템 */
+.service-item {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.service-dot {
+    position: absolute;
+    left: -6px;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: #E8795A;
+    border-radius: 50%;
+}
+
+/* 통계 아이템 */
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.stat-number .accent {
+    color: #E8795A;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+}
+
+/* 섹션 헤딩 with 라인 */
+.section-heading-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-heading-line::before {
+    content: '';
+    width: 4px;
+    height: 2rem;
+    background: #E8795A;
+    border-radius: 2px;
+}
+
+/* 3D 플립 카드 */
+.flip-card {
+    perspective: 1000px;
+    height: 340px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(360deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #E8795A 0%, #D96A4A 100%);
+    transform: rotateY(180deg);
+}
+
+.flip-card-back-green {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.flip-card:hover .flip-card-front {
+    border-color: #E8795A;
+}

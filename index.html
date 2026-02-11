@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="프론트엔드 개발자 홍길동의 이력서">
+    <title>홍길동 | 프론트엔드 개발자</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#E8795A',
+                        'accent-dark': '#D96A4A',
+                        dark: '#0A1628',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0A1628] text-slate-300">
+    <!-- 사이드 네비게이션 (데스크톱) -->
+    <nav class="fixed left-0 top-0 h-full w-20 bg-slate-900/50 backdrop-blur-xl border-r border-slate-800 hidden lg:flex flex-col items-center py-8 z-50">
+        <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-white font-bold mb-12">
+            홍
+        </div>
+
+        <ul class="flex flex-col space-y-6 flex-1">
+            <li>
+                <a href="#hero" class="nav-link active" data-tooltip="홈">
+                    <i class="fas fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#about" class="nav-link" data-tooltip="소개">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#skills" class="nav-link" data-tooltip="기술">
+                    <i class="fas fa-code"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#experience" class="nav-link" data-tooltip="경력">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#projects" class="nav-link" data-tooltip="프로젝트">
+                    <i class="fas fa-folder-open"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="nav-link" data-tooltip="연락처">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+
+        <button id="darkModeToggle" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors flex items-center justify-center">
+            <i class="fas fa-sun text-yellow-400"></i>
+        </button>
+    </nav>
+
+    <!-- 모바일 네비게이션 -->
+    <nav class="fixed bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-slate-800 lg:hidden z-50 px-2 py-3">
+        <ul class="flex justify-around items-center">
+            <li><a href="#hero" class="mobile-nav-link active"><i class="fas fa-home"></i></a></li>
+            <li><a href="#about" class="mobile-nav-link"><i class="fas fa-user"></i></a></li>
+            <li><a href="#skills" class="mobile-nav-link"><i class="fas fa-code"></i></a></li>
+            <li><a href="#experience" class="mobile-nav-link"><i class="fas fa-briefcase"></i></a></li>
+            <li><a href="#projects" class="mobile-nav-link"><i class="fas fa-folder-open"></i></a></li>
+            <li><a href="#contact" class="mobile-nav-link"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="lg:ml-20">
+        <!-- 히어로 섹션 -->
+        <section id="hero" class="min-h-screen flex items-center relative overflow-hidden">
+            <!-- 장식 쉐브론 -->
+            <div class="absolute left-4 lg:left-12 top-1/4 decorative-chevron hidden lg:block">&lt;</div>
+            <div class="absolute right-4 lg:right-12 top-1/4 decorative-chevron hidden lg:block">&gt;</div>
+
+            <div class="max-w-5xl mx-auto px-6 lg:px-12 py-20 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- 텍스트 콘텐츠 -->
+                    <div class="fade-in order-2 lg:order-1">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-2">
+                            안녕하세요<span class="text-accent">.</span>
+                        </h2>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-0.5 bg-accent"></div>
+                            <span class="text-slate-400 text-lg">저는 홍길동입니다</span>
+                        </div>
+                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 leading-tight">
+                            소프트웨어 개발자
+                        </h1>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="btn-primary">
+                                프로젝트 의뢰
+                            </a>
+                            <a href="#about" class="btn-outline">
+                                이력서 보기
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 프로필 이미지 -->
+                    <div class="relative fade-in order-1 lg:order-2 flex justify-center">
+                        <div class="profile-container w-64 h-64 lg:w-80 lg:h-80">
+                            <!-- 장식 링 -->
+                            <div class="profile-ring profile-ring-outer"></div>
+                            <div class="profile-ring profile-ring-arc"></div>
+                            <!-- 프로필 이미지 -->
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-[#0A1628] relative z-10">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="프로필 사진" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 기술 스택 바 -->
+        <section class="py-6 bg-[#0D1B2A]/80 border-y border-slate-800/30">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-wrap justify-center items-center gap-6 lg:gap-12">
+                    <span class="tech-stack-item"><i class="fab fa-html5"></i> HTML5</span>
+                    <span class="tech-stack-item"><i class="fab fa-css3-alt"></i> CSS</span>
+                    <span class="tech-stack-item"><i class="fab fa-js"></i> Javascript</span>
+                    <span class="tech-stack-item"><i class="fab fa-node-js"></i> Node.js</span>
+                    <span class="tech-stack-item"><i class="fab fa-react"></i> React</span>
+                    <span class="tech-stack-item"><i class="fab fa-git-alt"></i> Git</span>
+                    <span class="tech-stack-item"><i class="fab fa-github"></i> Github</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 서비스 & 소개 섹션 -->
+        <section id="about" class="py-24">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- 왼쪽: 서비스 목록 -->
+                    <div class="fade-in">
+                        <div class="relative pl-8">
+                            <!-- 수직 연결선 -->
+                            <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-slate-700"></div>
+
+                            <div class="space-y-10">
+                                <!-- 웹사이트 개발 -->
+                                <div class="relative">
+                                    <div class="service-dot"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-14 h-14 bg-slate-800/80 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-code text-xl text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-white font-semibold text-lg">웹사이트 개발</h3>
+                                            <p class="text-slate-500 text-sm mt-1">반응형 웹사이트 및 웹 애플리케이션</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 앱 개발 -->
+                                <div class="relative">
+                                    <div class="service-dot"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-14 h-14 bg-slate-800/80 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-mobile-alt text-xl text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-white font-semibold text-lg">앱 개발</h3>
+                                            <p class="text-slate-500 text-sm mt-1">크로스플랫폼 모바일 앱 개발</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 웹사이트 호스팅 -->
+                                <div class="relative">
+                                    <div class="service-dot"></div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-14 h-14 bg-slate-800/80 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-server text-xl text-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-white font-semibold text-lg">웹사이트 호스팅</h3>
+                                            <p class="text-slate-500 text-sm mt-1">안정적인 서버 구축 및 배포</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 소개 -->
+                    <div class="fade-in">
+                        <h2 class="text-3xl font-bold text-white mb-6">About me</h2>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            안녕하세요, 사용자 경험을 중시하는 소프트웨어 개발자 홍길동입니다.
+                            웹 기술을 활용하여 직관적이고 아름다운 인터페이스를 만드는 것을 좋아합니다.
+                            새로운 기술을 배우고 적용하는 것에 열정을 가지고 있으며,
+                            팀과의 협업을 통해 더 나은 결과물을 만들어내는 것을 즐깁니다.
+                        </p>
+
+                        <!-- 통계 -->
+                        <div class="grid grid-cols-3 gap-6">
+                            <div>
+                                <div class="stat-number">120<span class="accent">+</span></div>
+                                <div class="stat-label">완료한<br>프로젝트</div>
+                            </div>
+                            <div>
+                                <div class="stat-number">95<span class="accent">%</span></div>
+                                <div class="stat-label">고객<br>만족도</div>
+                            </div>
+                            <div>
+                                <div class="stat-number">10<span class="accent">+</span></div>
+                                <div class="stat-label">년의<br>경력</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 기술 스택 섹션 -->
+        <section id="skills" class="py-24 bg-[#0D1B2A]/50">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col items-center mb-16 fade-in">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white section-heading-line">기술 스택</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- HTML/CSS -->
+                    <div class="skill-card fade-in">
+                        <div class="w-16 h-16 bg-orange-500/20 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fab fa-html5 text-3xl text-orange-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">HTML/CSS</h3>
+                        <div class="flex gap-1 mb-2">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-slate-700 rounded-full"></span>
+                        </div>
+                        <span class="text-slate-500 text-sm">80%</span>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-card fade-in">
+                        <div class="w-16 h-16 bg-yellow-500/20 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fab fa-js text-3xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">JavaScript</h3>
+                        <div class="flex gap-1 mb-2">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent/50 rounded-full"></span>
+                            <span class="w-2 h-2 bg-slate-700 rounded-full"></span>
+                        </div>
+                        <span class="text-slate-500 text-sm">70%</span>
+                    </div>
+
+                    <!-- React -->
+                    <div class="skill-card fade-in">
+                        <div class="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fab fa-react text-3xl text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">React</h3>
+                        <div class="flex gap-1 mb-2">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-slate-700 rounded-full"></span>
+                            <span class="w-2 h-2 bg-slate-700 rounded-full"></span>
+                        </div>
+                        <span class="text-slate-500 text-sm">60%</span>
+                    </div>
+
+                    <!-- TailwindCSS -->
+                    <div class="skill-card fade-in">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-wind text-3xl text-teal-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">TailwindCSS</h3>
+                        <div class="flex gap-1 mb-2">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            <span class="w-2 h-2 bg-accent/50 rounded-full"></span>
+                            <span class="w-2 h-2 bg-slate-700 rounded-full"></span>
+                        </div>
+                        <span class="text-slate-500 text-sm">70%</span>
+                    </div>
+                </div>
+
+                <!-- 기타 도구 -->
+                <div class="mt-12 text-center fade-in">
+                    <h3 class="text-white font-semibold mb-6">사용 도구</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="tool-tag"><i class="fab fa-git-alt mr-2"></i>Git</span>
+                        <span class="tool-tag"><i class="fas fa-code mr-2"></i>VS Code</span>
+                        <span class="tool-tag"><i class="fab fa-figma mr-2"></i>Figma</span>
+                        <span class="tool-tag"><i class="fab fa-npm mr-2"></i>npm</span>
+                        <span class="tool-tag"><i class="fas fa-cube mr-2"></i>Webpack</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 경력 섹션 -->
+        <section id="experience" class="py-24">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col items-center mb-16 fade-in">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white section-heading-line">경력</h2>
+                </div>
+
+                <div class="relative">
+                    <!-- 타임라인 -->
+                    <div class="absolute left-0 lg:left-1/2 top-0 bottom-0 w-px bg-slate-700 transform lg:-translate-x-1/2"></div>
+
+                    <div class="space-y-12">
+                        <div class="relative pl-8 lg:pl-0 lg:w-1/2 lg:pr-12 fade-in">
+                            <div class="absolute left-0 lg:left-auto lg:right-0 top-0 w-4 h-4 bg-accent rounded-full transform lg:translate-x-1/2 border-4 border-[#0A1628]"></div>
+
+                            <div class="bg-slate-800/50 backdrop-blur rounded-2xl p-6 border border-slate-700/50">
+                                <span class="text-accent text-sm font-medium">2022.03 - 현재</span>
+                                <h3 class="text-xl text-white font-semibold mt-2">프론트엔드 개발자</h3>
+                                <p class="text-slate-400 mt-1">ABC 테크</p>
+                                <ul class="mt-4 space-y-2 text-slate-400">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        회사 웹사이트 리뉴얼 프로젝트 참여
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        React 기반 관리자 대시보드 개발
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        반응형 웹 디자인 구현 및 성능 최적화
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 프로젝트 섹션 -->
+        <section id="projects" class="py-24">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col items-center mb-16 fade-in">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white section-heading-line">프로젝트</h2>
+                    <div class="w-1 h-8 bg-accent rounded-full mt-4"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 프로젝트 1 -->
+                    <div class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <!-- 앞면 -->
+                            <div class="flip-card-front">
+                                <div class="h-48 bg-gradient-to-br from-accent/30 to-accent/10 rounded-t-2xl flex items-center justify-center">
+                                    <i class="fas fa-globe text-6xl text-white/30"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl text-white font-semibold mb-2">포트폴리오 웹사이트</h3>
+                                    <p class="text-slate-400 mb-4">
+                                        개인 포트폴리오 사이트. 반응형 디자인과 다크모드 지원.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-slate-700 rounded-lg text-sm text-slate-300">HTML</span>
+                                        <span class="px-3 py-1 bg-slate-700 rounded-lg text-sm text-slate-300">CSS</span>
+                                        <span class="px-3 py-1 bg-slate-700 rounded-lg text-sm text-slate-300">JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 뒷면 -->
+                            <div class="flip-card-back">
+                                <div class="h-full flex flex-col items-center justify-center p-6">
+                                    <i class="fas fa-globe text-5xl text-accent mb-4"></i>
+                                    <h3 class="text-xl text-white font-semibold mb-4">프로젝트 보기</h3>
+                                    <div class="flex gap-4">
+                                        <a href="#" class="w-14 h-14 bg-accent rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                            <i class="fab fa-github text-2xl"></i>
+                                        </a>
+                                        <a href="#" class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-accent hover:scale-110 transition-transform">
+                                            <i class="fas fa-external-link-alt text-2xl"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 프로젝트 2 -->
+                    <div class="flip-card fade-in">
+                        <div class="flip-card-inner">
+                            <!-- 앞면 -->
+                            <div class="flip-card-front">
+                                <div class="h-48 bg-gradient-to-br from-green-500/40 to-teal-500/40 rounded-t-2xl flex items-center justify-center">
+                                    <i class="fas fa-check-square text-6xl text-white/50"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl text-white font-semibold mb-2">할일 관리 앱</h3>
+                                    <p class="text-slate-400 mb-4">
+                                        로컬 스토리지 기반 Todo 앱. CRUD 기능 구현.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-slate-700 rounded-lg text-sm text-slate-300">React</span>
+                                        <span class="px-3 py-1 bg-slate-700 rounded-lg text-sm text-slate-300">TailwindCSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 뒷면 -->
+                            <div class="flip-card-back flip-card-back-green">
+                                <div class="h-full flex flex-col items-center justify-center p-6">
+                                    <i class="fas fa-check-square text-5xl text-green-400 mb-4"></i>
+                                    <h3 class="text-xl text-white font-semibold mb-4">프로젝트 보기</h3>
+                                    <div class="flex gap-4">
+                                        <a href="#" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                            <i class="fab fa-github text-2xl"></i>
+                                        </a>
+                                        <a href="#" class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-green-500 hover:scale-110 transition-transform">
+                                            <i class="fas fa-external-link-alt text-2xl"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNS 연락처 섹션 -->
+        <section id="contact" class="py-24 bg-[#0D1B2A]/50">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col items-center mb-12 fade-in">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white section-heading-line">연락하기</h2>
+                    <p class="text-slate-400 mt-4">궁금한 점이 있으시면 언제든지 연락주세요!</p>
+                </div>
+
+                <!-- SNS 링크 -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                    <a href="https://github.com" target="_blank" class="social-link-sm">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-link-sm">
+                        <i class="fab fa-youtube text-xl text-red-500"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-link-sm">
+                        <i class="fab fa-instagram text-xl text-pink-500"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-link-sm">
+                        <i class="fab fa-linkedin text-xl text-blue-500"></i>
+                    </a>
+                    <a href="mailto:hong@example.com" class="social-link-sm">
+                        <i class="fas fa-envelope text-xl text-accent"></i>
+                    </a>
+                </div>
+
+                <!-- 연락 폼 -->
+                <div class="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50 fade-in">
+                    <h3 class="text-xl font-semibold text-white mb-6 text-center">메시지 보내기</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm text-slate-400 mb-2">이름</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-colors"
+                                    placeholder="홍길동">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm text-slate-400 mb-2">연락처</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-colors"
+                                    placeholder="010-1234-5678">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm text-slate-400 mb-2">메시지 (선택)</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-colors resize-none"
+                                placeholder="궁금한 내용을 작성해주세요..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-4 bg-accent hover:bg-accent-dark text-white font-medium rounded-xl transition-all hover:shadow-lg hover:shadow-accent/25">
+                            <i class="fas fa-paper-plane mr-2"></i>발송하기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="py-8 border-t border-slate-800/50">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+                <p class="text-slate-500">&copy; 2025 홍길동. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
